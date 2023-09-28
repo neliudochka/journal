@@ -24,6 +24,6 @@ public class Record {
                 "Surname: " + surname + "\n" +
                 "Birthday: " + birthday + "\n" +
                 "Phone Number: " + phoneNumber + "\n" +
-                "Address: " + address + "\n";
+                "Address: " + address;
     }
 }

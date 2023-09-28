@@ -11,11 +11,12 @@ public class Journal {
         //
     }
 
-    //подитися записи
+    //подивитися записи
     public void show () {
         for (int i =0; i < records.size(); i++) {
             System.out.println("\t" + "Record " + i);
-            System.out.println(records.get(i)+"\n");
+            System.out.println(records.get(i));
+            System.out.println("-----------------------");
         }
     }
 
