@@ -2,8 +2,6 @@ import java.util.Scanner;
 
 public class App {
     static boolean active = true;
-    Journal journal = new Journal();
-
     public static void menu() {
         System.out.println("********** Welcome To Journal  *********** ");
         help();
@@ -26,10 +24,10 @@ public class App {
         do {
             System.out.println("\nEnter command");
             //окремі слова сприймає як окремий ввід
+            scanner.useDelimiter("\n");
             String command = scanner.next();
             switch(command) {
                 case "help":
-                    System.out.println("help command");
                     help();
                     break;
                 case "add":
@@ -45,14 +43,18 @@ public class App {
                     System.out.println("Address: ");
                     String address = scanner.next();
 
-                    journal.add(name, surname, birthday, phone, address);
+                    try {
+                        journal.add(name, surname, birthday, phone, address);
+                    } catch (RuntimeException exception) {
+                        System.out.println("Warning! " + exception.getMessage());
+                    }
                     break;
                 case "show":
-                    System.out.println("show command");
+                    System.out.println("Journal records:");
                     journal.show();
                     break;
                 case "exit":
-                    System.out.println("exit command");
+                    System.out.println("Bye!");
                     System.exit(0);
 
                 default:
